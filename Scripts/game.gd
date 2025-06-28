@@ -27,12 +27,13 @@ func loadConversation() -> void:
 	var conversation := [q_1, a_1, q_2, a_2]
 	for el in conversation:
 		el.hide()
-	var nb_last_msg = min(3, len(Global.playerPath[currentUser]))
+	var nb_last_msg = min(4, len(Global.playerPath[currentUser]))
 	for i in nb_last_msg:
 		conversation[i].text = Global.playerPath[currentUser][-nb_last_msg+i].text
 		conversation[i].show()
-	a_2.text = "..."
-	a_2.show()
+	if nb_last_msg < 4: 
+		a_2.text = "..."
+		a_2.show()
 	
 func loadBotAnswers() -> void:
 	var answerNodes = Global.getBotAnswers(currentUser)
