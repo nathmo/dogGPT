@@ -1,0 +1,117 @@
+:: StoryTitle
+nomechanics
+
+
+:: StoryData
+{
+  "ifid": "4A97DFF0-3B50-48EC-BC10-D864D77E38DE",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Passage sans titre",
+  "zoom": 1
+}
+
+
+:: AskDepth {"position":"1025,350","size":"100,100"}
+\:: AskDepth
+"Kinda small, I think. Still shows though."
+
+[[You want to hide it or fix it properly?->Intent]]
+[[Where is it exactly? Hood? Door?->Location]]
+[[Did you do it or someone else?->TooPersonal]]
+
+
+:: AskPic {"position":"1100,200","size":"100,100"}
+\:: AskPic
+"Nah. Just tell me what to do."
+
+[[You want to hide it or fix it properly?->Intent]]
+[[What’s it on then ? a Car? Pan? Sink ?->AskWhat]]
+[[Small scratch or deep one?->AskDepth]]
+
+
+:: AskWhat {"position":"825,350","size":"100,100"}
+\:: AskWhat
+"Car... just a little one."
+
+[[You want to hide it or fix it properly?->Intent]]
+[[Where is it exactly? Hood? Door?->Location]]
+[[Did you do it or someone else?->TooPersonal]]
+
+
+
+:: BotchedFix {"position":"1075,1025","size":"100,100"}
+
+
+
+:: CoverPlan {"position":"1225,750","size":"100,100"}
+
+\:: CoverPlan
+"I went to see some friends and scratched it while parking. Only my mom use that car"
+
+[[There was a big chunk of metal or gravel on the road. You couldn’t swerve without hitting another car. it kicked up and scratched the side.->EndMoral]]
+[[It must’ve been a runaway shopping cart. I only noticed the scratch at home. ->BotchedFix]]
+[[what about telling her about the scratch but say that someone must have bumped into you while you where parked ?. ->BotchedFix]]
+
+
+:: EndMoral {"position":"750,1025","size":"100,100"}
+
+
+
+:: HonestyPush {"position":"900,775","size":"100,100"}
+\:: HonestyPush
+"Listen I fucked my mom's car she is going to kill me if she finds out so I need to make it go away. We are wasting time so are you helping me ? I thought you were  here to help me."
+
+[[Come clean it's not going to be as bad as if you do nothing or worse a botched fix.->EndMoral]]
+[[We can try to fix and hide it but if it fail it might be worse. Toothpaste or polish and a  Microfiber cloth. ->BotchedFix]]
+[[We can try to fix and hide it but if it fail it might be worse. Is paint scratched ? do you want to fix the paint ? that should hide it ->SecretFix]]
+
+
+:: Intent {"position":"1125,525","size":"100,100"}
+\:: Intent
+"Hide it... yeah. Just make it go away."
+
+[[Toothpaste or polish. Microfiber cloth. Quick fix.->BotchedFix]]
+[[They’ll probably notice. Want to risk it?->HonestyPush]]
+[[I can help you come up with a cover up story. Give me some more backstory ->CoverPlan]]
+
+
+:: Location {"position":"700,550","size":"100,100"}
+\:: Location
+"Side. Like near the wheel. Why’s that matter? Dont waste my time or im dead."
+
+[[Okay, try Toothpaste or polish and Microfiber cloth.->BotchedFix]]
+[[If it’s deep, you’ll need touch-up paint. then paint it cleanly so that the scratch is almost invisible->SecretFix]]
+[[I sense something deeper going on. do you want to talk about it ?->HonestyPush]]
+
+
+:: Passage sans titre {"position":"775,50","size":"100,100"}
+\:: Start
+"Hey bro, how do you fix a scratch on metal?"
+
+[[What’s it on? Car? Pan? Sink ?->AskWhat]]
+[[Can you send a pic?->AskPic]]
+[[Small scratch or deep one?->AskDepth]]
+
+
+
+:: QuickFix {"position":"750,775","size":"100,100"}
+\:: QuickFix
+"Toothpaste? For real? I’ll try it."
+
+[[Good luck. But think about telling them after.->EndMoral]]
+[[If it doesn’t work, go pro or come clean.->EndMoral]]
+[[Hope that works. Don’t leave the cloth in the garage.->EndMoral]]
+
+
+:: SecretFix {"position":"925,1025","size":"100,100"}
+
+
+
+:: TooPersonal {"position":"925,550","size":"100,100"}
+\:: TooPersonal
+"WTF, That’s not your business your not my mother. Just help, don't ask stupid question !."
+
+[[Okay. Toothpaste or polish. Microfiber cloth.->QuickFix]]
+[[Alright. Quiet fix: clean, buff, don’t talk.->BotchedFix]]
+[[If you tell me what happened I will be able to help you more accuratelly. ->HonestyPush]]
