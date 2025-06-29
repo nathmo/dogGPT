@@ -339,6 +339,8 @@ func _ready() -> void:
 	loadDialogues2()
 	loadDialogues3()
 	resetPlayerPath()
+	
+var endings = []
 
 func giveAnswer(user: String, answerId: int) -> String :
 	if (len(playerPath[user][-1].next) > 0):
@@ -357,10 +359,14 @@ func giveAnswer(user: String, answerId: int) -> String :
 		for k in story_ends[user].keys():
 			if story_ends[user][k].has(playerPath[user][-1]):
 				print("finish ", k)
+				endings.append(k)
 				return k
-
+	
 	print("updated questions: ", usersQuestions[user][-1].text)
 	return ""
+
+func getEndings():
+	return endings;
 
 func isFinished(user = null) -> bool:
 	if user:
