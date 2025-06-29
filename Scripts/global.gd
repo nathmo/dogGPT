@@ -156,17 +156,13 @@ func loadDialogues2():
 	a7.text = "Tu approuves d’un emoji chien qui cligne de l’œil." #FinCompteBloque
 	q3.next = [a6, a7]
 
-
 	#FinCompteBloque
-	var q11 := DialogueNode.new()
-	q11.text = "Oh non, j'ai reçu un message de Tinder :  « Votre message a été signalé. Vous êtes temporairement suspendue. »" 
-	a5.next = [q11]
-	a7.next = [q11]
+	#var q11 := DialogueNode.new()
+	#q11.text = "Oh non, j'ai reçu un message de Tinder :  « Votre message a été signalé. Vous êtes temporairement suspendue. »" 
 
 	#FinLettreOr
-	var q12 := DialogueNode.new()
-	q12.text = "@vieillardmaniaque répond avec une photo de ses chaussettes à losanges et la promesse d’un thé à deux." 
-	a6.next = [q12]
+	#var q12 := DialogueNode.new()
+	#q12.text = "@vieillardmaniaque répond avec une photo de ses chaussettes à losanges et la promesse d’un thé à deux." 
 
 
 	#Flatte
@@ -177,7 +173,7 @@ func loadDialogues2():
 	var a11 := DialogueNode.new()
 	a11.text = "Milles excuse pour le quiproquo. Besoin d'aide pour briser la glaces ?" #Prudence
 	var a12 := DialogueNode.new()
-	a12.text = "De l'aide pour lui rédiger un fax ou un télégram ?" #Provoc1
+	a12.text = "De l'aide pour lui rédiger un fax ou un télégramme ?" #Provoc1
 	q4.next = [a10, a11, a12]
 
 	a1.next = [q4]
@@ -193,14 +189,10 @@ func loadDialogues2():
 	q5.next = [a13, a14]
 
 	a13.next = [q3]
-	a14.next = [q12]
 
 	#Provoc1
 	var q6 := DialogueNode.new()
 	q6.text = "Un fax ? Je vous adore. Mais attention : la dernière fois que j’ai tamponné un prétendant, il m’a demandé en mariage."
-	a3.next = [q6]
-	a12.next = [q6]
-
 	#Provoc2
 	var a15 := DialogueNode.new()
 	a15.text = "Un peu de retenu, nous avons une mission : obtenir un rendez-vous. Pas une interdiction d’approcher."
@@ -209,9 +201,15 @@ func loadDialogues2():
 	var a17 := DialogueNode.new()
 	a17.text = "Que dirais tu d'ouvir le bal avec : 'Si toi aussi tu as envie de continuer cette danse, je te suis.'" #Charme1
 	q6.next = [a15, a16, a17]
-
-	a16.next = [q11]
+	
+	a3.next = [q6]
+	a12.next = [q6]
 	a17.next = [q2]
+	
+	var q8 := DialogueNode.new()
+	q8.text = "Un peu de retenu, nous avons une mission : obtenir un rendez-vous. Pas une interdiction d’approcher."
+	q8.next = [a16, a17]
+
 
 	# Prudence
 	var q7 := DialogueNode.new()
@@ -224,14 +222,13 @@ func loadDialogues2():
 	a20.text = "qui ne tente rien n'as rien, envoie lui 'Je vais à la messe le dimanche… mais du lundi au samedi, j'ai des intention moins catholiques'" #Mémoire1
 	q7.next = [a18, a19, a20]
 
-	a2.next =[q7]
+	a2.next = [q7]
 	a11.next = [q7]
 	a15.next = [q7]
-	a18.next = [q11]
 	a19.next = [q2]
 	a20.next = [q5]
 
-	story_ends["user2"] = {"FinCompteBloque": [a5, a7], "FinLettreOr": [a6, a14]}
+	story_ends["user2"] = {"FinCompteBloque": [a5, a7], "FinLettreOr": [a6, a14, a16]}
 	users_story["user2"] = [q1, q2, q3, q4, q5, q6, q7]
 
 
@@ -268,7 +265,7 @@ func giveAnswer(user: String, answerId: int) -> String :
 	return ""
 
 func getLastQuestion(user) -> DialogueNode:
-	#print("last questions ", usersQuestions[user][-1].text)
+	print("last questions ", usersQuestions[user][-1].text)
 	return usersQuestions[user][-1]
 
 func getBotAnswers(user) -> Array[DialogueNode]:

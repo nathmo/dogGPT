@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dobyjlvjw0ir3"]
+[gd_scene load_steps=10 format=3 uid="uid://dobyjlvjw0ir3"]
 
 [ext_resource type="Script" uid="uid://4nenq2tbmdqt" path="res://Scripts/menu.gd" id="1_3kf3n"]
 [ext_resource type="Texture2D" uid="uid://cvbxpw2oj0wu1" path="res://Assets/GraphicAssets/DogGPTLogo.png" id="2_6pedr"]
+[ext_resource type="Texture2D" uid="uid://005rphjd8vfo" path="res://Assets/GraphicAssets/Grey_Textured_Background_.png" id="2_s2c3o"]
+[ext_resource type="Texture2D" uid="uid://dbdw3nxwweai2" path="res://Assets/GraphicAssets/speechbubble-1doggpt.png" id="3_ma218"]
 
 [sub_resource type="Gradient" id="Gradient_6pedr"]
 offsets = PackedFloat32Array(0.117455, 1)
@@ -28,12 +30,21 @@ Label/colors/font_color = Color(0.733333, 0.894118, 0.929412, 1)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3kf3n")
 
+[node name="GreyTexturedBackground" type="Sprite2D" parent="."]
+self_modulate = Color(0.168627, 0.439216, 1, 1)
+texture = ExtResource("2_s2c3o")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(2.56, 2.56)
 texture = SubResource("GradientTexture2D_syfuq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Speechbubble-1Doggpt" type="Sprite2D" parent="."]
+position = Vector2(393, 14)
+scale = Vector2(0.153971, 0.199621)
+texture = ExtResource("3_ma218")
 
 [node name="Button" type="Button" parent="."]
 anchors_preset = 8

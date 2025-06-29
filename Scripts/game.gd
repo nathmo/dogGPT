@@ -28,20 +28,21 @@ func _on_animation_finished(anim_name: String):
 
 
 func _process(_delta: float) -> void:
-	if new_data && animation_finished && end_animation_finished:
-		switchUser()
-		loadConversation()
-		loadBotAnswers()
-		new_data = false
-	if Global.player_finished["user1"] && Global.player_finished["user2"]:
-		get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+	if animation_finished && end_animation_finished:
+		if new_data:
+			switchUser()
+			loadConversation()
+			loadBotAnswers()
+			new_data = false
+		if Global.player_finished["user1"] && Global.player_finished["user2"]:
+			get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 
 
 func loadConversation() -> void:
 	var conversation := [q_1, a_1, q_2, a_2]
 	for el in conversation:
 		el.hide()
-	var nb_last_msg = min(4, len(Global.playerPath[currentUser]))
+	var nb_last_msg = min(3, len(Global.playerPath[currentUser]))
 	var msg_owner = ""
 	for i in nb_last_msg:
 		if int(i) % 2 == 0: msg_owner = "User\n"
