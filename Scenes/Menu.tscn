@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://4nenq2tbmdqt" path="res://Scripts/menu.gd" id="1_3kf3n"]
 [ext_resource type="Texture2D" uid="uid://cvbxpw2oj0wu1" path="res://Assets/GraphicAssets/DogGPTLogo.png" id="2_6pedr"]
 [ext_resource type="Texture2D" uid="uid://005rphjd8vfo" path="res://Assets/GraphicAssets/Grey_Textured_Background_.png" id="2_s2c3o"]
-[ext_resource type="Texture2D" uid="uid://dbdw3nxwweai2" path="res://Assets/GraphicAssets/speechbubble-1doggpt.png" id="3_ma218"]
+[ext_resource type="Theme" uid="uid://c7jtmr0ytj2i0" path="res://Assets/theme/llmcyber.tres" id="5_ma218"]
 
 [sub_resource type="Gradient" id="Gradient_6pedr"]
 offsets = PackedFloat32Array(0.117455, 1)
@@ -41,15 +41,10 @@ texture = SubResource("GradientTexture2D_syfuq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Speechbubble-1Doggpt" type="Sprite2D" parent="."]
-position = Vector2(393, 14)
-scale = Vector2(0.153971, 0.199621)
-texture = ExtResource("3_ma218")
-
 [node name="DogGptLogo" type="Sprite2D" parent="."]
-position = Vector2(342.4, 39.4014)
+position = Vector2(329, 30)
 rotation = 0.345427
-scale = Vector2(1.29127, 1.29127)
+scale = Vector2(1.35828, 1.35828)
 texture = ExtResource("2_6pedr")
 
 [node name="Control" type="Control" parent="."]
@@ -57,6 +52,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("5_ma218")
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 1
@@ -65,10 +61,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 236.4
-offset_top = -81.5986
-offset_right = 520.4
-offset_bottom = 55.4014
+offset_left = 226.0
+offset_top = -74.0
+offset_right = 534.0
+offset_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_syfuq")
