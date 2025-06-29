@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dobyjlvjw0ir3"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_3kf3n"]
+[ext_resource type="Script" uid="uid://4nenq2tbmdqt" path="res://Scripts/menu.gd" id="1_3kf3n"]
 [ext_resource type="Texture2D" uid="uid://cvbxpw2oj0wu1" path="res://Assets/GraphicAssets/DogGPTLogo.png" id="2_6pedr"]
 
 [sub_resource type="Gradient" id="Gradient_6pedr"]

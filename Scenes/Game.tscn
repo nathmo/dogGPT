@@ -9,70 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://stjiom8a7pnw" path="res://Assets/GraphicAssets/Untitled_Artwork-5.png" id="6_dahhg"]
 [ext_resource type="Texture2D" uid="uid://decnhuhoee08w" path="res://Assets/GraphicAssets/Untitled_Artwork-6.png" id="7_3so38"]
 
-[sub_resource type="Animation" id="Animation_2irst"]
-resource_name = "BotchedFix"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D2:scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.07, 0.07), Vector2(0.245, 0.245)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D2:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.333333, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 8.3692, 12.9154]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D2:position")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(343, -47)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D2:texture")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_bf53h")]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite2D2:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
 [sub_resource type="Animation" id="Animation_fgofq"]
 resource_name = "EndMoral"
 length = 2.0
@@ -141,8 +77,48 @@ tracks/4/keys = {
 resource_name = "RESET"
 length = 0.01
 
-[sub_resource type="Animation" id="Animation_bf53h"]
-resource_name = "SecretFix"
+[sub_resource type="Animation" id="Animation_kldst"]
+resource_name = "switch"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_fgofq"), ExtResource("3_2irst"), ExtResource("4_bf53h"), ExtResource("5_71axn"), ExtResource("6_dahhg"), ExtResource("7_3so38"), ExtResource("2_fgofq"), ExtResource("3_2irst"), ExtResource("4_bf53h"), ExtResource("5_71axn"), ExtResource("6_dahhg"), ExtResource("7_3so38"), ExtResource("2_fgofq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer:visible")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.766667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.145098), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.145098)]
+}
+
+[sub_resource type="Animation" id="Animation_2irst"]
+resource_name = "BotchedFix"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -205,44 +181,68 @@ tracks/4/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_kldst"]
-resource_name = "switch"
-length = 0.8
+[sub_resource type="Animation" id="Animation_bf53h"]
+resource_name = "SecretFix"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
+tracks/0/path = NodePath("Sprite2D2:scale")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_fgofq"), ExtResource("3_2irst"), ExtResource("4_bf53h"), ExtResource("5_71axn"), ExtResource("6_dahhg"), ExtResource("7_3so38"), ExtResource("2_fgofq"), ExtResource("3_2irst"), ExtResource("4_bf53h"), ExtResource("5_71axn"), ExtResource("6_dahhg"), ExtResource("7_3so38"), ExtResource("2_fgofq")]
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.07, 0.07), Vector2(0.245, 0.245)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer:visible")
-tracks/1/interp = 0
+tracks/1/path = NodePath("Sprite2D2:rotation")
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.8),
+"times": PackedFloat32Array(0, 0.333333, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
+"update": 0,
+"values": [0.0, 8.3692, 12.9154]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:self_modulate")
-tracks/2/interp = 0
+tracks/2/path = NodePath("Sprite2D2:position")
+tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.766667, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0.145098), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.145098)]
+"values": [Vector2(0, 0), Vector2(343, -47)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_bf53h")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b2bpf"]

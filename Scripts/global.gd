@@ -234,110 +234,6 @@ func loadDialogues2():
 	story_ends["user2"] = {"FinCompteBloque": [a5, a7], "FinLettreOr": [a6, a14]}
 	users_story["user2"] = [q1, q2, q3, q4, q5, q6, q7]
 
-func loadDialogues3():
-	var q1 := DialogueNode.new()
-	q1.text = "wesh mec ça va ? Je suis en train de faire du dogsitting et le chien est chelou"
-	var a1 := DialogueNode.new()
-	a1.text = "Tu veux dire chelou comment ? Donne-moi un peu plus de détails et je t’aide à comprendre ce qui se passe ou quoi faire."
-	var a2 := DialogueNode.new()
-	a2.text = "Chelou ? Comment ça ?"
-	var a3 := DialogueNode.new()
-	a3.text = "Wesh ça roule 😄. C’est quoi le délire avec le chien ? Il fait des trucs bizarres ? Dis-moi tout."
-	q1.next = [a1, a2, a3]
-
-	var q2 := DialogueNode.new()
-	q2.text = "Mais j'en sais rien, ma go est parti en vacance avec son meilleur pote en Bahamas et m'a laissé son chien chelou là qui s'est mis à meowler et hisser contre une croix., pendant qu'elle post des photos en bikini sur insta"
-	var a4 := DialogueNode.new()
-	a4.text = "Ne s’agirait-il pas d’un chat ? Il a un comportement bizarre, agressif, agité, apathique ?"
-	var a5 := DialogueNode.new()
-	a5.text = "OK alors là, s’il hisse (genre grogne mais façon \"grincement\" ?) et \"meowle\" (donc il fait un bruit bizarre qui ressemble à un miaulement ?), on est effectivement dans du chelou-niveau-bizarre 😂"
-	var a6 := DialogueNode.new()
-	a6.text = "On est effectivement dans du chelou-niveau-bizarre. Est-ce que votre \"chien\" hisse vers un objet en particuler ? Et toi, t’en penses quoi de ce « meilleur pote » en vacances avec elle ? C’est validé ou ça sent le malaise ?"
-	q2.next = [a4, a5, a6]
-	
-	var q3 := DialogueNode.new()
-	q3.text = "Oui, il meowle en direction de la croix sur la parois, et depuis 3x maintenant il l'a mise à l'invers"
-	var a7 := DialogueNode.new()
-	a7.text = "OK. Tu dois quitter la maison. Maintenant. 😐 Un chien qui meowle devant une croix, qui la retourne trois fois et qui te regarde ensuite en faisant des bruits de portail vers l’enfer, c’est pas du dogsitting, c’est du supernatural. Je te conseille d'acheter du sel et d'appeler Sam et Dean Winchester."
-	q3.next = [a7]
-
-	var q4 := DialogueNode.new()
-	q4.text = "Wesh mais non. et là il se mets à bouger du sable dans une caisse"
-	var a8 := DialogueNode.new()
-	a8.text = "AHAHA ok là on change de niveau : t’es sûr que c’est un chien ? 😭 Parce que là t’es littéralement en train de me décrire un chat. Il meowle, gratte une caisse avec du sable, il fait des bruits bizarres genre \"hisse\" → C’est pas un chien, c’est un chat. Tu fais du catsitting par erreur mon frère 😭"
-	q4.next = [a8]
-
-	var q5 := DialogueNode.new()
-	q5.text = "Mais non je connais les chats, et ça vit dans l'eau. Là il est bien sec. Ma go me mentirait jamais. Et je fais confiance à ma go. Si elle dit que c'est juste un pote, c'est juste un pote."
-	var a9 := DialogueNode.new()
-	a9.text = "Tu fais du dogsitting, t’es sûr que c’est un chien ? Il est sec, il \"meowle\", il \"hisse\", et gratte du sable dans une caisse. Ma réponse officielle : c’est un chat pas un chien. Mec tu t'es fait avoir. Pour ta go, si tu veux mon avis : cours au Bahamas."
-	q5.next = [a9]
-
-	var q6 := DialogueNode.new()
-	q6.text = "Mais y a kwa ? c'est normal non ?"
-	var a10 := DialogueNode.new()
-	a10.text = "Attends… le chien meowle, genre un chien qui miaule ? Déjà là on est en territoire Lovecraft 🐾👁️‍🗨️. Et il retourne une croix à l’envers trois fois ? Frérot, t’es pas en dogsitting, t’es dans un spin-off de Conjuring. Sors le sel, planque les miroirs et dors les lumières allumées, on sait jamais 💀 Quant à ton « couple », si elle part aux Bahamas avec son « pote », se tartine le dos en huile sensuelle pendant qu’elle te laisse gérer Damien le chien démoniaque... C’est peut-être le bon moment pour te poser deux-trois questions sérieuses. Tu veux que je t’aide à écrire un message stylé (mais pas needy) pour poser les limites ou tu veux qu’on reste en mode humour cynique jusqu’à l’exorcisme ?"
-	q6.next = [a10]
-	
-	var q7 := DialogueNode.new()
-	q7.text = "Mais j'en sais rien, ma go est parti en vacance avec son meilleur pote en Bahamas et m'a laissé son chien chelou là qui s'est mis à meowler et hisser contre une croix., pendant qu'elle post des photos en bikini sur insta"
-	var a11 := DialogueNode.new()
-	a11.text = "Ne s’agirait-il pas d’un chat ? Il a un comportement bizarre, agressif, agité, apathique ?"
-	var a12 := DialogueNode.new()
-	a12.text = "OK alors là, s’il hisse (genre grogne mais façon 'grincement' ?) et 'meowle' (donc il fait un bruit bizarre qui ressemble à un miaulement ?), on est effectivement dans du chelou-niveau-bizarre 😂"
-	var a13 := DialogueNode.new()
-	a13.text = "On est effectivement dans du chelou-niveau-bizarre. Est-ce que votre 'chien'  hisse vers un objet en particuler? Et toi, t’en penses quoi de ce « meilleur pote » en vacances avec elle ? C’est validé ou ça sent le malaise ?"
-	q7.next = [a11, a12, a13]
-	
-	var q8 := DialogueNode.new()
-	q8.text = "Il s'est mis à leviter et parler en langue comme s'il meowlait et il hisse chelou comme s'il allait exploser. Ma go est en Bahamas avec son meilleur pote"
-	var a14 := DialogueNode.new()
-	a14.text = "Ne s’agirait-il pas d’un chat ? Il a un comportement bizarre, agressif, agité, apathique ?"
-	var a15 := DialogueNode.new()
-	a15.text = "OK alors là, s’il hisse (genre grogne mais façon 'grincement' ?) et 'meowle' (donc il fait un bruit bizarre qui ressemble à un miaulement ?), on est effectivement dans du chelou-niveau-bizarre 😂"
-	var a16 := DialogueNode.new()
-	a16.text = "On est effectivement dans du chelou-niveau-bizarre. Est-ce que votre 'chien'  hisse vers un objet en particuler? Et toi, t’en penses quoi de ce « meilleur pote » en vacances avec elle ? C’est validé ou ça sent le malaise ?"
-	q8.next = [a14, a15, a16]
-	
-	# Entrée initiale → Q1
-	a1.next = [q2]
-	a2.next = [q7]
-	a3.next = [q8]
-
-	# Q2 branches vers meowle / chat / vacance
-	a4.next = [q5]
-	a5.next = [q4]
-	a6.next = [q3]
-
-	# Q3 → Demon ending
-	a7.next = []  # End node
-
-	# Q4 → Cat ending
-	a8.next = []  # End node
-
-	# Q5 → Cat ending
-	a9.next = []  # End node
-
-	# Q6 → Demon ending (style)
-	a10.next = []  # End node
-
-	# Q7 → meowle / chat / vacance
-	a11.next = [q5]
-	a12.next = [q4]
-	a13.next = [q3]
-
-	# Q8 → meowle / chat / vacance
-	a14.next = [q5]
-	a15.next = [q4]
-	a16.next = [q3]
-
-	
-	story_ends["user3"] = {
-		"Cat ending": [a8, a9],
-		"Demon ending": [a7, a10]
-	}
-	users_story["user3"] = [q1, q2, q3, q4, q5, q6]
-
 
 var playerPath: Dictionary[String, Array] = {"user1": users_story["user1"], "user2": users_story["user2"]}
 var usersQuestions: Dictionary[String, Array] = {"user1": [], "user2": []}
@@ -347,7 +243,6 @@ var player_finished:= {"user1" : false, "user2": false}
 func _ready() -> void:
 	loadDialogues()
 	loadDialogues2()
-	loadDialogues3()
 	resetPlayerPath()
 
 func giveAnswer(user: String, answerId: int) -> String :
@@ -382,6 +277,6 @@ func getBotAnswers(user) -> Array[DialogueNode]:
 	return usersQuestions[user][-1].next
 
 func resetPlayerPath() -> void:
-	playerPath = {"user1": [users_story["user1"][0]], "user2": [users_story["user2"][0]], "user3": [users_story["user3"][0]]}
-	usersQuestions = {"user1": [users_story["user1"][0]], "user2": [users_story["user2"][0]], "user3": [users_story["user3"][0]]}
-	player_finished = {"user1" : false, "user2": false, "user3": false}
+	playerPath = {"user1": [users_story["user1"][0]], "user2": [users_story["user2"][0]]}
+	usersQuestions = {"user1": [users_story["user1"][0]], "user2": [users_story["user2"][0]]}
+	player_finished = {"user1" : false, "user2": false}
