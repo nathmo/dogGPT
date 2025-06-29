@@ -46,16 +46,29 @@ position = Vector2(393, 14)
 scale = Vector2(0.153971, 0.199621)
 texture = ExtResource("3_ma218")
 
-[node name="Button" type="Button" parent="."]
+[node name="DogGptLogo" type="Sprite2D" parent="."]
+position = Vector2(342.4, 39.4014)
+rotation = 0.345427
+scale = Vector2(1.29127, 1.29127)
+texture = ExtResource("2_6pedr")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 256.4
-offset_top = -61.5986
-offset_right = 540.4
-offset_bottom = 75.4014
+offset_left = 236.4
+offset_top = -81.5986
+offset_right = 520.4
+offset_bottom = 55.4014
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_syfuq")
@@ -63,13 +76,7 @@ theme_override_font_sizes/font_size = 100
 text = "Start
 "
 
-[node name="DogGptLogo" type="Sprite2D" parent="."]
-position = Vector2(342.4, 39.4014)
-rotation = 0.345427
-scale = Vector2(1.29127, 1.29127)
-texture = ExtResource("2_6pedr")
-
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Control"]
 offset_left = -865.0
 offset_top = -464.0
 offset_right = -294.0
@@ -78,4 +85,4 @@ theme_override_colors/font_color = Color(0.733333, 0.894118, 0.929412, 1)
 theme_override_font_sizes/font_size = 150
 text = "DogGPT"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

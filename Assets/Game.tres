@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cdqg6sbfpv6gv"]
+
+[ext_resource type="Texture2D" uid="uid://dbdw3nxwweai2" path="res://Assets/GraphicAssets/speechbubble-1doggpt.png" id="1_fbv1w"]
+[ext_resource type="Texture2D" uid="uid://begbsr8g3hyhm" path="res://Assets/GraphicAssets/carre_blanc.png" id="2_4540d"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kodbe"]
+texture = ExtResource("1_fbv1w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbv1w"]
+texture = ExtResource("2_4540d")
+modulate_color = Color(0.396078, 1, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_01mmy"]
+
+[resource]
+BoxContainer/styles/background = SubResource("StyleBoxTexture_kodbe")
+Button/colors/font_color = Color(0.105882, 0.541176, 0.596078, 1)
+Button/styles/normal = SubResource("StyleBoxTexture_fbv1w")
+Label/colors/font_color = Color(0.456, 0.5168, 0.57, 1)
+Label/fonts/font = null
+Label/styles/normal = SubResource("StyleBoxTexture_01mmy")

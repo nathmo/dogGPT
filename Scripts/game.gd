@@ -1,11 +1,11 @@
 extends Node2D
+@onready var q_1: Label = $Control/MarginContainer/HBoxContainer/MarginContainer/Conversation/Q1
+@onready var a_1: Label = $Control/MarginContainer/HBoxContainer/MarginContainer/Conversation/A1
+@onready var q_2: Label = $Control/MarginContainer/HBoxContainer/MarginContainer/Conversation/Q2
+@onready var a_2: Label = $Control/MarginContainer/HBoxContainer/MarginContainer/Conversation/A2
 
-@onready var q_1: Label = $MarginContainer/HBoxContainer/MarginContainer/Conversation/Q1
-@onready var a_1: Label = $MarginContainer/HBoxContainer/MarginContainer/Conversation/A1
-@onready var q_2: Label = $MarginContainer/HBoxContainer/MarginContainer/Conversation/Q2
-@onready var a_2: Label = $MarginContainer/HBoxContainer/MarginContainer/Conversation/A2
+@onready var answers: VBoxContainer = $Control/MarginContainer/HBoxContainer/Answers
 
-@onready var answers: VBoxContainer = $MarginContainer/HBoxContainer/Answers
 
 var new_data := false
 var currentUser = "user1"
@@ -16,6 +16,9 @@ var end_animation_finished := true
 func _ready() -> void:
 	for el in answers.get_children():
 		el.hide()
+	
+	var nb_user = len(Global.users_story)
+	currentUser = "user%d" % (1+randi_range(0, len(Global.users_story)-1))
 	loadConversation()
 	loadBotAnswers()
 
@@ -37,7 +40,6 @@ func _process(_delta: float) -> void:
 		if Global.isFinished():
 			get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 
-
 func loadConversation() -> void:
 	var conversation := [q_1, a_1, q_2, a_2]
 	for el in conversation:
@@ -45,7 +47,8 @@ func loadConversation() -> void:
 	var nb_last_msg = min(3, len(Global.playerPath[currentUser]))
 	var msg_owner = ""
 	for i in nb_last_msg:
-		if int(i) % 2 == 0: msg_owner = "User\n"
+		if int(i) % 2 == 0: 
+			msg_owner = Global.getUserName(currentUser) + "\n"
 		else: msg_owner = "DogGPT\n"
 		conversation[i].text = msg_owner+Global.playerPath[currentUser][-nb_last_msg+i].text
 		conversation[i].show()

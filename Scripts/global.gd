@@ -322,6 +322,12 @@ func loadDialogues3():
 	}
 	users_story["user3"] = [q1, q2, q3, q4, q5, q6]
 
+func getUserName(user: String) -> String:
+	match user:
+		"user1": return "user84438431"
+		"user2": return "user93870163"
+		"user3": return "user01275383"
+		_: return ""
 
 var playerPath: Dictionary[String, Array] = {"user1": users_story["user1"], "user2": users_story["user2"], "user3": users_story["user3"]}
 var usersQuestions: Dictionary[String, Array] = {"user1": [], "user2": [], "user3": []}

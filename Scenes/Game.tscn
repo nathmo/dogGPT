@@ -1,10 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://x7o1jsmskv85"]
+[gd_scene load_steps=26 format=3 uid="uid://x7o1jsmskv85"]
 
 [ext_resource type="Script" uid="uid://dcd74ut1w85bb" path="res://Scripts/game.gd" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://c4wysoyiypjoj" path="res://Assets/GraphicAssets/Untitled_Artwork-1.png" id="2_fgofq"]
 [ext_resource type="Texture2D" uid="uid://5wvtt4cbhs6g" path="res://Assets/GraphicAssets/Untitled_Artwork-2.png" id="3_2irst"]
 [ext_resource type="Texture2D" uid="uid://c67fx5mrixet7" path="res://Assets/GraphicAssets/Pas_Mecano.png" id="3_bf53h"]
 [ext_resource type="Texture2D" uid="uid://bnnga5g5dpk1n" path="res://Assets/GraphicAssets/Granny-DogGPT.png" id="3_dahhg"]
+[ext_resource type="Theme" uid="uid://cdqg6sbfpv6gv" path="res://Assets/Game.tres" id="3_wxwew"]
 [ext_resource type="Texture2D" uid="uid://cch3e6dlgnloo" path="res://Assets/GraphicAssets/Pas_Mecano_2.png" id="4_71axn"]
 [ext_resource type="Texture2D" uid="uid://drb3hdm0inupk" path="res://Assets/GraphicAssets/Untitled_Artwork-3.png" id="4_bf53h"]
 [ext_resource type="Texture2D" uid="uid://bjpuoacuao6jn" path="res://Assets/GraphicAssets/Untitled_Artwork-4.png" id="5_71axn"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cgsvvyr64ynlw" path="res://Assets/GraphicAssets/GrannyHappy-DogGPT.png" id="10_dahhg"]
 [ext_resource type="Texture2D" uid="uid://boh18u0k4iaoj" path="res://Assets/GraphicAssets/Cat_sitting.png" id="12_3cx6b"]
 [ext_resource type="Texture2D" uid="uid://f16t8emstupj" path="res://Assets/GraphicAssets/Cat-possessed.png" id="12_3so38"]
+[ext_resource type="Texture2D" uid="uid://begbsr8g3hyhm" path="res://Assets/GraphicAssets/carre_blanc.png" id="15_acvyw"]
 
 [sub_resource type="Animation" id="Animation_2irst"]
 resource_name = "BotchedFix"
@@ -288,7 +290,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label:visible")
+tracks/1/path = NodePath("Control/Label:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -300,7 +302,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Label:text")
+tracks/2/path = NodePath("Control/Label:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -392,7 +394,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer:visible")
+tracks/1/path = NodePath("Control/MarginContainer:visible")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -416,7 +418,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Label:visible")
+tracks/3/path = NodePath("Control/Label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -428,7 +430,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Label:text")
+tracks/4/path = NodePath("Control/Label:text")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -583,12 +585,24 @@ _data = {
 script = ExtResource("1_iukft")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.145098)
+self_modulate = Color(1, 1, 1, 0.0588235)
 texture = ExtResource("2_fgofq")
+
+[node name="CarreBlanc" type="Sprite2D" parent="."]
+position = Vector2(-464, 9)
+scale = Vector2(1.96328, 1.96328)
+texture = ExtResource("15_acvyw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -605,12 +619,12 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 50
@@ -618,69 +632,96 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="Conversation" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+[node name="Conversation" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Q1" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/Conversation"]
+[node name="Q1" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/Conversation"]
 layout_mode = 2
+theme = ExtResource("3_wxwew")
 theme_override_font_sizes/font_size = 30
 text = "user txt 1
 usi fiae fieau fuiu gfa gfbjdjkgfgkrj gfuar gurd gkf rgu fguae gfuae ufa ufagufg ufg auegf au faeu "
+vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="A1" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/Conversation"]
+[node name="A1" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/Conversation"]
 layout_mode = 2
+theme = ExtResource("3_wxwew")
 theme_override_font_sizes/font_size = 30
 text = "doggpt txt 1"
 horizontal_alignment = 2
+vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Q2" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/Conversation"]
+[node name="Q2" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/Conversation"]
 layout_mode = 2
+theme = ExtResource("3_wxwew")
 theme_override_font_sizes/font_size = 30
 text = "user txt 2"
+vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="A2" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer/Conversation"]
+[node name="A2" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/Conversation"]
 layout_mode = 2
+theme = ExtResource("3_wxwew")
 theme_override_font_sizes/font_size = 30
 text = "..."
 horizontal_alignment = 2
 autowrap_mode = 3
 
-[node name="Answers" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Answers" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/Answers"]
+[node name="Button" type="Button" parent="Control/MarginContainer/HBoxContainer/Answers"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("3_wxwew")
 theme_override_font_sizes/font_size = 30
 text = "Option 1
 "
 autowrap_mode = 3
 
-[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/Answers"]
+[node name="Button2" type="Button" parent="Control/MarginContainer/HBoxContainer/Answers"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("3_wxwew")
 theme_override_font_sizes/font_size = 30
 text = "Option 2
 "
 autowrap_mode = 3
 
-[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/Answers"]
+[node name="Button3" type="Button" parent="Control/MarginContainer/HBoxContainer/Answers"]
 layout_mode = 2
 size_flags_vertical = 6
+theme = ExtResource("3_wxwew")
 theme_override_font_sizes/font_size = 30
 text = "Option 3
 "
 autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Control"]
+visible = false
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -634.5
+offset_top = -88.5
+offset_right = 594.5
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "other request incomming"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 visible = false
@@ -692,24 +733,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_b2bpf")
 }
 
-[node name="Label" type="Label" parent="."]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 100
-text = "other request incomming"
-
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Answers/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Answers/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/Answers/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Answers/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Answers/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/Answers/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
