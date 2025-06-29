@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c7jtmr0ytj2i0"]
+
+[ext_resource type="FontFile" uid="uid://705oeu5rn73r" path="res://Assets/font/papyrus.ttf" id="1_ngecw"]
+
+[resource]
+default_font = ExtResource("1_ngecw")
