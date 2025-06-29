@@ -14,30 +14,29 @@ nomechanics
 
 :: AskDepth {"position":"1025,350","size":"100,100"}
 \:: AskDepth
-"Kinda small, I think. Still shows though."
+"chais pas elle est petite mais on la vois quoi."
 
-[[You want to hide it or fix it properly?->Intent]]
-[[Where is it exactly? Hood? Door?->Location]]
-[[Did you do it or someone else?->TooPersonal]]
+[[tu veux la faire disparaitre ou la réparer bien ?->Intent]]
+[[elle est ou du coup la rayure ?->Location]]
+[[Cest quelquun dautre qui l'a fais ou toi ?->TooPersonal]]
 
 
 :: AskPic {"position":"1100,200","size":"100,100"}
 \:: AskPic
-"Nah. Just tell me what to do."
+"non explique juste comment effacer la rayure"
 
-[[You want to hide it or fix it properly?->Intent]]
-[[What’s it on then ? a Car? Pan? Sink ?->AskWhat]]
-[[Small scratch or deep one?->AskDepth]]
+[[Tu veux la faire disparaitre ou la réparer bien?->Intent]]
+[[mais c'est sur quoi du coup ? une voiture ? une poele a frire ? un scoot ?->AskWhat]]
+[[Ok mais petite rayure ou grosse rayure ?->AskDepth]]
 
 
 :: AskWhat {"position":"825,350","size":"100,100"}
 \:: AskWhat
-"Car... just a little one."
+"Une voiture. une petite rayure."
 
-[[You want to hide it or fix it properly?->Intent]]
-[[Where is it exactly? Hood? Door?->Location]]
-[[Did you do it or someone else?->TooPersonal]]
-
+[[Tu veux la faire disparaitre ou la réparer ?->Intent]]
+[[Du coup est elle ou sur la voiture ? porte ? jante ?->Location]]
+[[C'est un autre boug qui l'as rayé ou toi ?->TooPersonal]]
 
 
 :: BotchedFix {"position":"1075,1025","size":"100,100"}
@@ -45,13 +44,12 @@ nomechanics
 
 
 :: CoverPlan {"position":"1225,750","size":"100,100"}
-
 \:: CoverPlan
-"I went to see some friends and scratched it while parking. Only my mom use that car"
+"J'allais voir des potes avec la caisse et je me suis prix un poteau en me parkant..."
 
-[[There was a big chunk of metal or gravel on the road. You couldn’t swerve without hitting another car. it kicked up and scratched the side.->EndMoral]]
-[[It must’ve been a runaway shopping cart. I only noticed the scratch at home. ->BotchedFix]]
-[[what about telling her about the scratch but say that someone must have bumped into you while you where parked ?. ->BotchedFix]]
+[[Non non non. Il y avais un gros débris sur la route. Façon destination final. tu a voulu l'eviter mais tu pouvais pas sinon tu rentrait dans une autre voiture.->EndMoral]]
+[[Dit que t'es allé au magasin et que c'est surement un caddie quand tu étais partis. ->BotchedFix]]
+[[Et si tu lui disais qu'un boug avais reculé dans la voiture quand elle était parké ? ->BotchedFix]]
 
 
 :: EndMoral {"position":"750,1025","size":"100,100"}
@@ -60,48 +58,47 @@ nomechanics
 
 :: HonestyPush {"position":"900,775","size":"100,100"}
 \:: HonestyPush
-"Listen I fucked my mom's car she is going to kill me if she finds out so I need to make it go away. We are wasting time so are you helping me ? I thought you were  here to help me."
+"J'ai niker la voiture de ma mere. Si elle le voie elle va skizz et me niker. T'es la pour m'aider et la je suis dans la sauce..."
 
-[[Come clean it's not going to be as bad as if you do nothing or worse a botched fix.->EndMoral]]
-[[We can try to fix and hide it but if it fail it might be worse. Toothpaste or polish and a  Microfiber cloth. ->BotchedFix]]
-[[We can try to fix and hide it but if it fail it might be worse. Is paint scratched ? do you want to fix the paint ? that should hide it ->SecretFix]]
+[[Avoue lui. ça sera moins pire que si tu empire la chose en essayant de la faire disparaitre...->EndMoral]]
+[[On peut essayer de faire disparaitre la trace mais si ça marche pas ça va etre pire... Prend du dentifrice et un chifon microfibre. ->BotchedFix]]
+[[Il te faut de la peinture qui match la carosserie. il devrais y en avoir dans la boite a gant. Prend et repeint proprement la rayure et prie pour que ça sois sec avant qu'elle arrive.->SecretFix]]
 
 
 :: Intent {"position":"1125,525","size":"100,100"}
 \:: Intent
-"Hide it... yeah. Just make it go away."
+"Bruh. Je veux juste la faire disparaitre que ça se vois pas."
 
-[[Toothpaste or polish. Microfiber cloth. Quick fix.->BotchedFix]]
-[[They’ll probably notice. Want to risk it?->HonestyPush]]
-[[I can help you come up with a cover up story. Give me some more backstory ->CoverPlan]]
+[[Dentrifrice et chiffon microfibre. frote ça devrais disparaitre->BotchedFix]]
+[[ça risque de se voir quand meme voir d'empirer la situation. T'es sur tu veux pas en parler à quelqu'un ?->HonestyPush]]
+[[Si t'es vraiment dans la sauce je peux t'aider a trouver un menssonges crédibles pour que ça sois pas ta faute. Raconte moi tout dans les détails ->CoverPlan]]
 
 
 :: Location {"position":"700,550","size":"100,100"}
 \:: Location
-"Side. Like near the wheel. Why’s that matter? Dont waste my time or im dead."
+"Sur le coté, pas loin de la roue. ça change quoi ? me fais pas perdre mon temps c'est une question de vie ou de mort la."
 
-[[Okay, try Toothpaste or polish and Microfiber cloth.->BotchedFix]]
-[[If it’s deep, you’ll need touch-up paint. then paint it cleanly so that the scratch is almost invisible->SecretFix]]
-[[I sense something deeper going on. do you want to talk about it ?->HonestyPush]]
+[[Okay, alors essaie du dentrifrice et une pate microfibre.->BotchedFix]]
+[[Essaie de repeidre par dessus. si c'est fait propre on verra rien.->SecretFix]]
+[[comment ça vie ou de mort ? tu veux en parler ?->HonestyPush]]
 
 
 :: Passage sans titre {"position":"775,50","size":"100,100"}
 \:: Start
-"Hey bro, how do you fix a scratch on metal?"
+"Wey frero commen jefasse une rayure sur du metal ?"
 
-[[What’s it on? Car? Pan? Sink ?->AskWhat]]
-[[Can you send a pic?->AskPic]]
-[[Small scratch or deep one?->AskDepth]]
-
+[[Sur quoi ? une voiture ? une poelle a frire ?->AskWhat]]
+[[envoie une photo?->AskPic]]
+[[grosse rayure ou petite ?->AskDepth]]
 
 
 :: QuickFix {"position":"750,775","size":"100,100"}
 \:: QuickFix
-"Toothpaste? For real? I’ll try it."
+"dentrice ? wtf ? jte fais comfiance hein"
 
-[[Good luck. But think about telling them after.->EndMoral]]
-[[If it doesn’t work, go pro or come clean.->EndMoral]]
-[[Hope that works. Don’t leave the cloth in the garage.->EndMoral]]
+[[Bonne chance poto.->BotchedFix]]
+[[Si ça marche avoue que ta niker la caisse. ça sera moins pire.->EndMoral]]
+[[Oublie pas de ranger la pate et le dentifrice...->BotchedFix]]
 
 
 :: SecretFix {"position":"925,1025","size":"100,100"}
@@ -110,8 +107,8 @@ nomechanics
 
 :: TooPersonal {"position":"925,550","size":"100,100"}
 \:: TooPersonal
-"WTF, That’s not your business your not my mother. Just help, don't ask stupid question !."
+"Tes pas ma mere donc arrete de poser des questions et aide moi a la place de poser des questions a la cons..."
 
-[[Okay. Toothpaste or polish. Microfiber cloth.->QuickFix]]
-[[Alright. Quiet fix: clean, buff, don’t talk.->BotchedFix]]
-[[If you tell me what happened I will be able to help you more accuratelly. ->HonestyPush]]
+[[Essaie avec du dentrifrice et un chiffon microfibre.->QuickFix]]
+[[Okay plus de questions... Prend de la peiture et repeind la rayure propre que ça sois carré. si tu le fais bien on verra rien.->BotchedFix]]
+[[Si tu me raconte tout je pourrais au moins essayer de t'aider et pas de donner une mauvaise solution. ->HonestyPush]]

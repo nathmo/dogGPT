@@ -13,6 +13,7 @@ config_version=5
 config/name="DogGPT"
 run/main_scene="uid://dobyjlvjw0ir3"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.959668, 0.96507, 0.998956, 1)
 config/icon="res://icon.svg"
 
 [autoload]
@@ -29,3 +30,4 @@ window/stretch/mode="viewport"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.345225, 0.462369, 0.617537, 1)

@@ -1,9 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://dobyjlvjw0ir3"]
+[gd_scene load_steps=8 format=3 uid="uid://dobyjlvjw0ir3"]
 
 [ext_resource type="Script" uid="uid://4nenq2tbmdqt" path="res://Scripts/menu.gd" id="1_3kf3n"]
+[ext_resource type="Texture2D" uid="uid://cvbxpw2oj0wu1" path="res://Assets/GraphicAssets/DogGPTLogo.png" id="2_6pedr"]
+
+[sub_resource type="Gradient" id="Gradient_6pedr"]
+offsets = PackedFloat32Array(0.117455, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.353215, 0.410519, 0.95217, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_syfuq"]
+gradient = SubResource("Gradient_6pedr")
+width = 960
+height = 540
+fill = 1
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_syfuq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6pedr"]
+
+[sub_resource type="Theme" id="Theme_syfuq"]
+Button/colors/font_color = Color(0.734636, 0.893847, 0.928885, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/styles/hover = SubResource("StyleBoxEmpty_syfuq")
+Button/styles/normal = SubResource("StyleBoxEmpty_6pedr")
+Label/colors/font_color = Color(0.733333, 0.894118, 0.929412, 1)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3kf3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(2.56, 2.56)
+texture = SubResource("GradientTexture2D_syfuq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -13,14 +41,30 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.0
-offset_top = -15.5
-offset_right = 23.0
-offset_bottom = 15.5
+offset_left = 256.4
+offset_top = -61.5986
+offset_right = 540.4
+offset_bottom = 75.4014
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_syfuq")
 theme_override_font_sizes/font_size = 100
 text = "Start
 "
+
+[node name="DogGptLogo" type="Sprite2D" parent="."]
+position = Vector2(342.4, 39.4014)
+rotation = 0.345427
+scale = Vector2(1.29127, 1.29127)
+texture = ExtResource("2_6pedr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -865.0
+offset_top = -464.0
+offset_right = -294.0
+offset_bottom = -259.0
+theme_override_colors/font_color = Color(0.733333, 0.894118, 0.929412, 1)
+theme_override_font_sizes/font_size = 150
+text = "DogGPT"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

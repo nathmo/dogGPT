@@ -9,10 +9,8 @@ extends Node2D
 
 var new_data := false
 var currentUser = "user1"
-var isAnimationPlaying := false
-@export var animation_time = 1.0
-var animation_timer = 0.0
-@onready var anim: Sprite2D = $Sprite2D
+var animation_finished := true
+var end_animation_finished := true
 
 
 func _ready() -> void:
@@ -22,21 +20,15 @@ func _ready() -> void:
 	loadBotAnswers()
 
 
-func playAnimation(delta: float):
-	if animation_timer < animation_time:
-		animation_timer += delta
-		anim.scale = Vector2.ONE * (animation_timer/animation_time) * 16
+func _on_animation_finished(anim_name: String):
+	if anim_name == "switch":
+		animation_finished = true
 	else:
-		isAnimationPlaying = false
-		animation_timer = 0
-		anim.hide()
-		$MarginContainer.show()
+		end_animation_finished = true
 
 
-func _process(delta: float) -> void:
-	if isAnimationPlaying:
-		playAnimation(delta)
-	elif new_data:
+func _process(_delta: float) -> void:
+	if new_data && animation_finished && end_animation_finished:
 		switchUser()
 		loadConversation()
 		loadBotAnswers()
@@ -63,6 +55,8 @@ func loadConversation() -> void:
 
 func loadBotAnswers() -> void:
 	var answerNodes = Global.getBotAnswers(currentUser)
+	for i in len(answers.get_children()):
+		answers.get_children()[i].hide()
 	for i in len(answerNodes):
 		answers.get_children()[i].text = answerNodes[i].text
 		answers.get_children()[i].show()
@@ -81,15 +75,22 @@ func switchUser() -> void:
 
 
 func choseAnswer(i: int) -> void:
-	Global.giveAnswer(currentUser, i)
+	var ending = Global.giveAnswer(currentUser, i)
+	if ending != "":
+		startEndAnimation(ending)
+		end_animation_finished = false
 	new_data = true
-	
-	
+
+
 func startAnimation():
-	isAnimationPlaying = true
-	anim.show()
-	$MarginContainer.hide()
-	
+	$AnimationPlayer.play("switch")
+	$AnimationPlayer.connect("animation_finished", _on_animation_finished)
+
+func startEndAnimation(ending: String):
+	print(ending)
+	$AnimationPlayer.play(ending)
+	$AnimationPlayer.connect("end_animation_finished", _on_animation_finished)
+
 
 func _on_button_pressed() -> void:
 	choseAnswer(0)
