@@ -1,8 +1,8 @@
 extends Node
 
-var users_story:= {"user1": [], "user2": []}
+var users_story:= {"user1": [], "user2": [], "user3": []}
 
-var story_ends:= {"user1": {}, "user2": {}}
+var story_ends:= {"user1": {}, "user2": {},  "user3": {}}
 
 func loadDialogues():
 	var q1:= DialogueNode.new()
@@ -317,16 +317,16 @@ func loadDialogues3():
 	a16.next = [q3]
 
 	story_ends["user3"] = {
-		"Cat ending": [a8, a9],
-		"Demon ending": [a7, a10]
+		"CatEnding": [a8, a9],
+		"DemonEnding": [a7, a10]
 	}
 	users_story["user3"] = [q1, q2, q3, q4, q5, q6]
 
 
-var playerPath: Dictionary[String, Array] = {"user1": users_story["user1"], "user2": users_story["user2"]}
-var usersQuestions: Dictionary[String, Array] = {"user1": [], "user2": []}
+var playerPath: Dictionary[String, Array] = {"user1": users_story["user1"], "user2": users_story["user2"], "user3": users_story["user3"]}
+var usersQuestions: Dictionary[String, Array] = {"user1": [], "user2": [], "user3": []}
 
-var player_finished:= {"user1" : false, "user2": false}
+var player_finished:= {"user1" : false, "user2": false, "user3": false}
 
 func _ready() -> void:
 	loadDialogues()
@@ -336,12 +336,12 @@ func _ready() -> void:
 
 func giveAnswer(user: String, answerId: int) -> String :
 	if (len(playerPath[user][-1].next) > 0):
-		#print("choice: ", playerPath[user][-1].next[answerId].text)
+		print("choice: ", playerPath[user][-1].next[answerId].text)
 		playerPath[user].append(playerPath[user][-1].next[answerId])
 
 	if (len(playerPath[user][-1].next) > 0):
 		var curr_question = playerPath[user][-1].next[0]
-		#print("new question: ", curr_question.text)
+		print("new question: ", curr_question.text)
 
 		playerPath[user].append(curr_question)
 		usersQuestions[user].append(curr_question)
@@ -353,8 +353,14 @@ func giveAnswer(user: String, answerId: int) -> String :
 				print("finish ", k)
 				return k
 
-	#print("updated questions: ", usersQuestions[user][-1].text)
+	print("updated questions: ", usersQuestions[user][-1].text)
 	return ""
+
+func isFinished(user = null) -> bool:
+	if user:
+		return player_finished[user]
+	else:
+		return player_finished["user1"] && player_finished["user2"] && player_finished["user3"]
 
 func getLastQuestion(user) -> DialogueNode:
 	print("last questions ", usersQuestions[user][-1].text)

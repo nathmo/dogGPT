@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 			loadConversation()
 			loadBotAnswers()
 			new_data = false
-		if Global.player_finished["user1"] && Global.player_finished["user2"]:
+		if Global.isFinished():
 			get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
 
 

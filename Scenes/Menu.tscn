@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dobyjlvjw0ir3"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_3kf3n"]
+[ext_resource type="Script" uid="uid://4nenq2tbmdqt" path="res://Scripts/menu.gd" id="1_3kf3n"]
 [ext_resource type="Texture2D" uid="uid://cvbxpw2oj0wu1" path="res://Assets/GraphicAssets/DogGPTLogo.png" id="2_6pedr"]
 [ext_resource type="Texture2D" uid="uid://005rphjd8vfo" path="res://Assets/GraphicAssets/Grey_Textured_Background_.png" id="2_s2c3o"]
 [ext_resource type="Texture2D" uid="uid://dbdw3nxwweai2" path="res://Assets/GraphicAssets/speechbubble-1doggpt.png" id="3_ma218"]
