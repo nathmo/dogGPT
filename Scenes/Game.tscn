@@ -1,17 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://x7o1jsmskv85"]
+[gd_scene load_steps=20 format=3 uid="uid://x7o1jsmskv85"]
 
 [ext_resource type="Script" uid="uid://dcd74ut1w85bb" path="res://Scripts/game.gd" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://c4wysoyiypjoj" path="res://Assets/GraphicAssets/Untitled_Artwork-1.png" id="2_fgofq"]
 [ext_resource type="Texture2D" uid="uid://5wvtt4cbhs6g" path="res://Assets/GraphicAssets/Untitled_Artwork-2.png" id="3_2irst"]
 [ext_resource type="Texture2D" uid="uid://c67fx5mrixet7" path="res://Assets/GraphicAssets/Pas_Mecano.png" id="3_bf53h"]
+[ext_resource type="Texture2D" uid="uid://bnnga5g5dpk1n" path="res://Assets/GraphicAssets/Granny-DogGPT.png" id="3_dahhg"]
+[ext_resource type="Texture2D" uid="uid://cch3e6dlgnloo" path="res://Assets/GraphicAssets/Pas_Mecano_2.png" id="4_71axn"]
 [ext_resource type="Texture2D" uid="uid://drb3hdm0inupk" path="res://Assets/GraphicAssets/Untitled_Artwork-3.png" id="4_bf53h"]
 [ext_resource type="Texture2D" uid="uid://bjpuoacuao6jn" path="res://Assets/GraphicAssets/Untitled_Artwork-4.png" id="5_71axn"]
 [ext_resource type="Texture2D" uid="uid://stjiom8a7pnw" path="res://Assets/GraphicAssets/Untitled_Artwork-5.png" id="6_dahhg"]
 [ext_resource type="Texture2D" uid="uid://decnhuhoee08w" path="res://Assets/GraphicAssets/Untitled_Artwork-6.png" id="7_3so38"]
+[ext_resource type="Texture2D" uid="uid://cgsvvyr64ynlw" path="res://Assets/GraphicAssets/GrannyHappy-DogGPT.png" id="10_dahhg"]
 
-[sub_resource type="Animation" id="Animation_fgofq"]
-resource_name = "EndMoral"
-length = 2.0
+[sub_resource type="Animation" id="Animation_2irst"]
+resource_name = "BotchedFix"
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -22,7 +25,71 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.07, 0.07), Vector2(0.245, 0.245)]
+"values": [Vector2(0.07, 0.07), Vector2(0.335, 0.335)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 8.3692, 12.9154]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(343, -47)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_bf53h")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_fgofq"]
+resource_name = "EndMoral"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.07, 0.07), Vector2(0.31, 0.31)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -76,6 +143,106 @@ tracks/4/keys = {
 [sub_resource type="Animation" id="Animation_iukft"]
 resource_name = "RESET"
 length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["other request incomming"]
+}
+
+[sub_resource type="Animation" id="Animation_bf53h"]
+resource_name = "SecretFix"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.07, 0.07), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333333, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 8.3692, 12.9154]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(343, -47)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_71axn")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_kldst"]
 resource_name = "switch"
@@ -116,10 +283,34 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0.145098), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.145098)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:text")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.286059, 0.406994),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["", "other", "other request", "other request incomming"]
+}
 
-[sub_resource type="Animation" id="Animation_2irst"]
-resource_name = "BotchedFix"
-length = 2.0
+[sub_resource type="Animation" id="Animation_3so38"]
+resource_name = "FinCompteBloque"
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -130,7 +321,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.07, 0.07), Vector2(0.245, 0.245)]
+"values": [Vector2(0.07, 0.07), Vector2(0.5, 0.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -166,7 +357,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_bf53h")]
+"values": [ExtResource("3_dahhg")]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -181,9 +372,9 @@ tracks/4/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_bf53h"]
-resource_name = "SecretFix"
-length = 2.0
+[sub_resource type="Animation" id="Animation_3cx6b"]
+resource_name = "FinLettreOr"
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -194,7 +385,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.07, 0.07), Vector2(0.245, 0.245)]
+"values": [Vector2(0.07, 0.07), Vector2(0.5, 0.5)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -230,7 +421,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_bf53h")]
+"values": [ExtResource("10_dahhg")]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -249,6 +440,8 @@ tracks/4/keys = {
 _data = {
 &"BotchedFix": SubResource("Animation_2irst"),
 &"EndMoral": SubResource("Animation_fgofq"),
+&"FinCompteBloque": SubResource("Animation_3so38"),
+&"FinLettreOr": SubResource("Animation_3cx6b"),
 &"RESET": SubResource("Animation_iukft"),
 &"SecretFix": SubResource("Animation_bf53h"),
 &"switch": SubResource("Animation_kldst")
@@ -359,13 +552,32 @@ autowrap_mode = 3
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("3_bf53h")
+position = Vector2(343, -47)
+rotation = 12.9154
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_dahhg")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_b2bpf")
 }
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "other request incomming"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Answers/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Answers/Button2" to="." method="_on_button_2_pressed"]

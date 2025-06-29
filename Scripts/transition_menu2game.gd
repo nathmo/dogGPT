@@ -5,11 +5,11 @@ extends Node2D
 var animation_finished = false
 
 func _ready():
-	$AnimationPlayer.play("move_path")
+	$AnimationPlayer.play("go_to_datacenter")
 	$AnimationPlayer.connect("animation_finished", _on_animation_finished)
 
 func _on_animation_finished(anim_name):
-	if anim_name == "move_path":
+	if anim_name == "go_to_datacenter":
 		animation_finished = true
 		_load_next_scene()
 
