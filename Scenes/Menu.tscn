@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dobyjlvjw0ir3"]
+[gd_scene load_steps=12 format=3 uid="uid://dobyjlvjw0ir3"]
 
 [ext_resource type="Script" uid="uid://4nenq2tbmdqt" path="res://Scripts/menu.gd" id="1_3kf3n"]
 [ext_resource type="Texture2D" uid="uid://cvbxpw2oj0wu1" path="res://Assets/GraphicAssets/DogGPTLogo.png" id="2_6pedr"]
 [ext_resource type="Texture2D" uid="uid://005rphjd8vfo" path="res://Assets/GraphicAssets/Grey_Textured_Background_.png" id="2_s2c3o"]
-[ext_resource type="AudioStream" uid="uid://laxltg1ot6xh" path="res://Assets/audio/black_spot-226244.mp3" id="5_idohh"]
+[ext_resource type="AudioStream" uid="uid://s0ajgx7wllii" path="res://Assets/audio/alone_by_the_river-186436.mp3" id="5_idohh"]
 [ext_resource type="Theme" uid="uid://c7jtmr0ytj2i0" path="res://Assets/theme/llmcyber.tres" id="5_ma218"]
+[ext_resource type="AudioStream" uid="uid://exierfd0ja1b" path="res://Assets/audio/button_sound.wav" id="6_idohh"]
 
 [sub_resource type="Gradient" id="Gradient_6pedr"]
 offsets = PackedFloat32Array(0.117455, 1)
@@ -85,5 +86,10 @@ text = "DogGPT"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("5_idohh")
+autoplay = true
+parameters/looping = true
+
+[node name="AudioButton" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("6_idohh")
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]

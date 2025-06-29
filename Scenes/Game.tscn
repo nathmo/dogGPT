@@ -10,7 +10,7 @@
 [ext_resource type="Theme" uid="uid://c7jtmr0ytj2i0" path="res://Assets/theme/llmcyber.tres" id="4_alh3a"]
 [ext_resource type="Texture2D" uid="uid://drb3hdm0inupk" path="res://Assets/GraphicAssets/Untitled_Artwork-3.png" id="4_bf53h"]
 [ext_resource type="Texture2D" uid="uid://bjpuoacuao6jn" path="res://Assets/GraphicAssets/Untitled_Artwork-4.png" id="5_71axn"]
-[ext_resource type="AudioStream" uid="uid://laxltg1ot6xh" path="res://Assets/audio/black_spot-226244.mp3" id="6_4q8tf"]
+[ext_resource type="AudioStream" uid="uid://s0ajgx7wllii" path="res://Assets/audio/alone_by_the_river-186436.mp3" id="6_4q8tf"]
 [ext_resource type="Texture2D" uid="uid://stjiom8a7pnw" path="res://Assets/GraphicAssets/Untitled_Artwork-5.png" id="6_dahhg"]
 [ext_resource type="Texture2D" uid="uid://decnhuhoee08w" path="res://Assets/GraphicAssets/Untitled_Artwork-6.png" id="7_3so38"]
 [ext_resource type="Texture2D" uid="uid://cgsvvyr64ynlw" path="res://Assets/GraphicAssets/GrannyHappy-DogGPT.png" id="10_dahhg"]
@@ -728,6 +728,8 @@ text = "other request incomming"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("6_4q8tf")
+autoplay = true
+parameters/looping = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 visible = false
