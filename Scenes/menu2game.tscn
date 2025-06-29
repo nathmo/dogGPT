@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx87fuj0mtp1p"]
+[gd_scene load_steps=15 format=3 uid="uid://dx87fuj0mtp1p"]
 
-[ext_resource type="Texture2D" uid="uid://dk2qdxidwe6y4" path="res://Assets/datacenter.png" id="1_0lggi"]
 [ext_resource type="Script" uid="uid://b2j44nifq0mlp" path="res://Scripts/transition_menu2game.gd" id="1_o2cnt"]
+[ext_resource type="Texture2D" uid="uid://c4wysoyiypjoj" path="res://Assets/GraphicAssets/Untitled_Artwork-1.png" id="2_dj1m0"]
+[ext_resource type="Texture2D" uid="uid://5wvtt4cbhs6g" path="res://Assets/GraphicAssets/Untitled_Artwork-2.png" id="3_u5u2g"]
+[ext_resource type="Texture2D" uid="uid://drb3hdm0inupk" path="res://Assets/GraphicAssets/Untitled_Artwork-3.png" id="4_codnb"]
+[ext_resource type="Texture2D" uid="uid://bjpuoacuao6jn" path="res://Assets/GraphicAssets/Untitled_Artwork-4.png" id="5_c4py1"]
+[ext_resource type="Texture2D" uid="uid://stjiom8a7pnw" path="res://Assets/GraphicAssets/Untitled_Artwork-5.png" id="6_u7yry"]
+[ext_resource type="Texture2D" uid="uid://decnhuhoee08w" path="res://Assets/GraphicAssets/Untitled_Artwork-6.png" id="7_elt6w"]
+[ext_resource type="Texture2D" uid="uid://cvbxpw2oj0wu1" path="res://Assets/GraphicAssets/DogGPTLogo.png" id="8_csseb"]
 
 [sub_resource type="Animation" id="Animation_o2cnt"]
 length = 0.001
@@ -16,6 +22,42 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Datacenter:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_dj1m0")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D2:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_0lggi"]
@@ -34,19 +76,68 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(200, 100), Vector2(-200, 500)]
 }
 
+[sub_resource type="Animation" id="Animation_wnuut"]
+resource_name = "go_to_datacenter"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Datacenter:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0627934, 0.132564, 0.200008, 0.265127, 0.325595, 0.400017, 0.458159, 0.518627, 0.600025, 0.669796, 0.748869, 0.807011, 0.862827, 0.930272, 0.993065, 1.05818, 1.13028, 1.20005, 1.25354, 1.31866, 1.38611, 1.46053, 1.5303, 1.60239, 1.67216, 1.73728, 1.80473, 1.88147, 1.94659, 2.00474, 2.06055, 2.12102, 2.19544, 2.26521, 2.33266, 2.40243, 2.46289, 2.53267, 2.60476, 2.67686, 2.74198, 2.80477, 2.86059, 2.93268, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_dj1m0"), ExtResource("3_u5u2g"), ExtResource("4_codnb"), ExtResource("5_c4py1"), ExtResource("6_u7yry"), ExtResource("7_elt6w"), ExtResource("2_dj1m0"), ExtResource("3_u5u2g"), ExtResource("4_codnb"), ExtResource("5_c4py1"), ExtResource("6_u7yry"), ExtResource("7_elt6w"), ExtResource("2_dj1m0"), ExtResource("3_u5u2g"), ExtResource("4_codnb"), ExtResource("5_c4py1"), ExtResource("6_u7yry"), ExtResource("7_elt6w"), ExtResource("2_dj1m0"), ExtResource("3_u5u2g"), ExtResource("4_codnb"), ExtResource("5_c4py1"), ExtResource("6_u7yry"), ExtResource("7_elt6w"), ExtResource("2_dj1m0"), ExtResource("3_u5u2g"), ExtResource("4_codnb"), ExtResource("5_c4py1"), ExtResource("6_u7yry"), ExtResource("7_elt6w"), ExtResource("2_dj1m0"), ExtResource("3_u5u2g"), ExtResource("4_codnb"), ExtResource("5_c4py1"), ExtResource("6_u7yry"), ExtResource("7_elt6w"), ExtResource("2_dj1m0"), ExtResource("3_u5u2g"), ExtResource("4_codnb"), ExtResource("5_c4py1"), ExtResource("6_u7yry"), ExtResource("7_elt6w"), ExtResource("2_dj1m0"), ExtResource("3_u5u2g"), ExtResource("4_codnb"), ExtResource("5_c4py1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iul0v"]
 _data = {
 &"RESET": SubResource("Animation_o2cnt"),
+&"go_to_datacenter": SubResource("Animation_wnuut"),
 &"move_path": SubResource("Animation_0lggi")
 }
+
+[sub_resource type="Gradient" id="Gradient_5qbbw"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w6cne"]
+gradient = SubResource("Gradient_5qbbw")
+width = 1920
+height = 1080
 
 [node name="Menu2Game" type="Node2D"]
 script = ExtResource("1_o2cnt")
 
 [node name="Datacenter" type="Sprite2D" parent="."]
-position = Vector2(0.608731, 296)
-scale = Vector2(2.36534, 3.00724)
-texture = ExtResource("1_0lggi")
+position = Vector2(0, 1.99996)
+scale = Vector2(1, 0.998148)
+texture = ExtResource("2_dj1m0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -54,3 +145,26 @@ texture = ExtResource("1_0lggi")
 libraries = {
 &"": SubResource("AnimationLibrary_iul0v")
 }
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_w6cne")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-42, 25)
+texture = ExtResource("8_csseb")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -732.0
+offset_top = 312.0
+offset_right = 733.0
+offset_bottom = 449.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+text = "Connecting to user requests ..."
