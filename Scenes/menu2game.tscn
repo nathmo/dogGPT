@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dx87fuj0mtp1p"]
+[gd_scene load_steps=17 format=3 uid="uid://dx87fuj0mtp1p"]
 
 [ext_resource type="Script" uid="uid://b2j44nifq0mlp" path="res://Scripts/transition_menu2game.gd" id="1_o2cnt"]
 [ext_resource type="Texture2D" uid="uid://c4wysoyiypjoj" path="res://Assets/GraphicAssets/Untitled_Artwork-1.png" id="2_dj1m0"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://decnhuhoee08w" path="res://Assets/GraphicAssets/Untitled_Artwork-6.png" id="7_elt6w"]
 [ext_resource type="Texture2D" uid="uid://cvbxpw2oj0wu1" path="res://Assets/GraphicAssets/DogGPTLogo.png" id="8_csseb"]
 [ext_resource type="Theme" uid="uid://c7jtmr0ytj2i0" path="res://Assets/theme/llmcyber.tres" id="9_u5u2g"]
+[ext_resource type="AudioStream" uid="uid://exierfd0ja1b" path="res://Assets/audio/button_sound.wav" id="10_codnb"]
 
 [sub_resource type="Animation" id="Animation_o2cnt"]
 length = 0.001
@@ -177,3 +178,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 100
 text = "Connecting to user requests ..."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("10_codnb")
+autoplay = true
